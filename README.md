@@ -97,7 +97,6 @@ Tries
 I primarily use:
 
 - ☕ **Java** — Main language for LeetCode and competitive programming
-- 🔵 **C** — Data Structures & Algorithms practice and academic work
 
 ---
 
