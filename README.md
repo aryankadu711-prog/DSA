@@ -77,6 +77,8 @@ Binary Search Trees
 Heaps / Priority Queues
 Graphs
 Tries
+```
+
 ## ⚡ Algorithms & Techniques
 
 - Sorting
@@ -117,7 +119,7 @@ For every problem, I try to follow this process:
 6. Test edge cases
         ↓
 7. Write clean code
-
+```
 
 ## 🎯 Goals
 
@@ -146,8 +148,6 @@ DSA/
 ├── Dynamic-Programming/
 └── README.md
 ```
-
----
 
 ## 🌐 Coding Profiles
 
