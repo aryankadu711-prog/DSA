@@ -34,18 +34,9 @@ Solutions are automatically pushed to this repository using **LeetHub v2**.
 
 ## 📊 LeetCode Progress
 
-> 🚧 Live statistics will be added soon.
-
-| Difficulty | Target |
-|------------|--------|
-| 🟢 Easy | 100 |
-| 🟡 Medium | 150 |
-| 🔴 Hard | 50 |
-| 🏆 Total | 300 |
+[![LeetCode Stats](https://leetcard.jacoblin.cool/aryan_kadu711?theme=dark)](https://leetcode.com/u/aryan_kadu711/)
 
 🔗 **[View My LeetCode Profile](https://leetcode.com/u/aryan_kadu711/)**
-
----
 
 ## 🧠 DSA Topic Roadmap
 
@@ -128,20 +119,18 @@ For every problem, I try to follow this process:
 7. Write clean code
 
 
-### 2. Then add your goals
-
-```markdown
 ## 🎯 Goals
 
 - 🧠 Master common DSA patterns
 - ⚡ Improve competitive programming speed
 - 💼 Prepare for technical interviews and placements
 
+---
+
 ## 🗂️ Repository Structure
 
 ```text
 DSA/
-│
 ├── Arrays/
 ├── Strings/
 ├── Hashing/
@@ -155,13 +144,17 @@ DSA/
 ├── Graphs/
 ├── Greedy/
 ├── Dynamic-Programming/
-│
 └── README.md
+```
+
+---
 
 ## 🌐 Coding Profiles
 
 - 💻 [LeetCode](https://leetcode.com/u/aryan_kadu711/)
 - 🐙 [GitHub](https://github.com/aryankadu711-prog)
+
+---
 
 ## 🔥 Current Focus
 
