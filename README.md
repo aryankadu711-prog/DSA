@@ -175,6 +175,7 @@ DSA/
 |  |
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
+| [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -183,6 +184,7 @@ DSA/
 |  |
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
+| [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
 ## Greedy
 |  |
 | ------- |
@@ -191,4 +193,5 @@ DSA/
 |  |
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
+| [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
 <!---LeetCode Topics End-->
