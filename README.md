@@ -207,4 +207,16 @@ DSA/
 |  |
 | ------- |
 | [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
+## Array
+|  |
+| ------- |
+| [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
+## Backtracking
+|  |
+| ------- |
+| [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
+## Algorithm X
+|  |
+| ------- |
+| [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
 <!---LeetCode Topics End-->
