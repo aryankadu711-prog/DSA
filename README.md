@@ -174,6 +174,7 @@ DSA/
 ## String
 |  |
 | ------- |
+| [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
 ## Dynamic Programming
@@ -194,4 +195,16 @@ DSA/
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
+## Hash Table
+|  |
+| ------- |
+| [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
+## Sliding Window
+|  |
+| ------- |
+| [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
 <!---LeetCode Topics End-->
