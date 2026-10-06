@@ -177,6 +177,7 @@ DSA/
 | [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/aryankadu711-prog/DSA/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -186,15 +187,18 @@ DSA/
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/aryankadu711-prog/DSA/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Greedy
 |  |
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/aryankadu711-prog/DSA/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Bracket Sequences
 |  |
 | ------- |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/aryankadu711-prog/DSA/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Hash Table
 |  |
 | ------- |
