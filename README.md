@@ -174,6 +174,7 @@ DSA/
 ## String
 |  |
 | ------- |
+| [0301-remove-invalid-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0301-remove-invalid-parentheses) |
 | [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
 | [0678-valid-parenthesis-string](https://github.com/aryankadu711-prog/DSA/tree/master/0678-valid-parenthesis-string) |
 | [0856-score-of-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0856-score-of-parentheses) |
@@ -219,8 +220,13 @@ DSA/
 |  |
 | ------- |
 | [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
+| [0301-remove-invalid-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0301-remove-invalid-parentheses) |
 ## Algorithm X
 |  |
 | ------- |
 | [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0301-remove-invalid-parentheses](https://github.com/aryankadu711-prog/DSA/tree/master/0301-remove-invalid-parentheses) |
 <!---LeetCode Topics End-->
