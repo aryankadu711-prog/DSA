@@ -4,19 +4,17 @@ class Solution {
         int in=0;
         StringBuilder result = new StringBuilder();
         for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='(' && count==0){
-                count++; 
-            }
-            else if(s.charAt(i)=='('  && count!=0){
+            if(s.charAt(i)=='(') {
+                if(count>0){
+                    result.append('(');
+                }
                 count++;
-                result.append('(');
             }
-            else if(s.charAt(i)==')' && count!=1){
+            else{
                 count--;
-                result.append(')');
-            }
-            else if(s.charAt(i)==')' && count==1){
-                count--;
+                if(count>0){
+                    result.append(')');
+                }
             }
         }
         return result.toString();
