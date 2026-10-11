@@ -225,6 +225,7 @@ DSA/
 | ------- |
 | [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
+| [2778-sum-of-squares-of-special-elements](https://github.com/aryankadu711-prog/DSA/tree/master/2778-sum-of-squares-of-special-elements) |
 ## Backtracking
 |  |
 | ------- |
@@ -250,4 +251,8 @@ DSA/
 |  |
 | ------- |
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
+## Enumeration
+|  |
+| ------- |
+| [2778-sum-of-squares-of-special-elements](https://github.com/aryankadu711-prog/DSA/tree/master/2778-sum-of-squares-of-special-elements) |
 <!---LeetCode Topics End-->
