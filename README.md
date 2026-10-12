@@ -200,6 +200,7 @@ DSA/
 | [0921-minimum-add-to-make-parentheses-valid](https://github.com/aryankadu711-prog/DSA/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 | [1541-minimum-insertions-to-balance-a-parentheses-string](https://github.com/aryankadu711-prog/DSA/tree/master/1541-minimum-insertions-to-balance-a-parentheses-string) |
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
+| [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 ## Bracket Sequences
 |  |
 | ------- |
@@ -212,6 +213,7 @@ DSA/
 |  |
 | ------- |
 | [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
+| [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -226,6 +228,7 @@ DSA/
 | [0051-n-queens](https://github.com/aryankadu711-prog/DSA/tree/master/0051-n-queens) |
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
 | [2778-sum-of-squares-of-special-elements](https://github.com/aryankadu711-prog/DSA/tree/master/2778-sum-of-squares-of-special-elements) |
+| [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 ## Backtracking
 |  |
 | ------- |
@@ -255,4 +258,8 @@ DSA/
 |  |
 | ------- |
 | [2778-sum-of-squares-of-special-elements](https://github.com/aryankadu711-prog/DSA/tree/master/2778-sum-of-squares-of-special-elements) |
+## Bit Manipulation
+|  |
+| ------- |
+| [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 <!---LeetCode Topics End-->
