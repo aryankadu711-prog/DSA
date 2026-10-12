@@ -1,26 +1,21 @@
 class Solution {
     public int maxSum(List<Integer> nums, int k) {
-        final int MOD = 1_000_000_007;
-        final int BITS = 30;
-        int []count= new int [BITS];
-        for(int num: nums){
-            for(int i=0;i<BITS;i++){
-                if((num & (1<<i))!=0){
-                    count[i]++;
-                }
-            }
+        int[] count = new int[32];
+        int mod = (int) (1e9 + 7);
+        for (int num : nums){
+            for (int i = 0; i < 32; ++i)
+                count[i] += num >> i & 1;   
         }
-        long result=0;
-        while(k--> 0){
-            long curr=0;
-            for(int i=0;i<BITS;i++){
-                if(count[i]>0){
-                    count[i]--;
-                    curr |= 1L<< i;
-                }
+        long ans = 0;
+        for (int i = 0; i < k; ++i){
+            int c = 0;
+            for (int j = 0; j < 32; ++j){
+                if (count[j] == 0) continue;
+                c |= 1 << j;
+                --count[j];
             }
-            result=(result + curr *curr) % MOD;
+            ans = (ans + 1L * c * c) % mod;
         }
-        return (int)result;
+        return (int) ans;
     }
 }
