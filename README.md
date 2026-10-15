@@ -215,6 +215,7 @@ DSA/
 | ------- |
 | [0395-longest-substring-with-at-least-k-repeating-characters](https://github.com/aryankadu711-prog/DSA/tree/master/0395-longest-substring-with-at-least-k-repeating-characters) |
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -230,6 +231,7 @@ DSA/
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
 | [2778-sum-of-squares-of-special-elements](https://github.com/aryankadu711-prog/DSA/tree/master/2778-sum-of-squares-of-special-elements) |
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
 ## Backtracking
 |  |
 | ------- |
@@ -267,4 +269,12 @@ DSA/
 |  |
 | ------- |
 | [3723-maximize-sum-of-squares-of-digits](https://github.com/aryankadu711-prog/DSA/tree/master/3723-maximize-sum-of-squares-of-digits) |
+## Binary Indexed Tree
+|  |
+| ------- |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
+## Segment Tree
+|  |
+| ------- |
+| [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
 <!---LeetCode Topics End-->
