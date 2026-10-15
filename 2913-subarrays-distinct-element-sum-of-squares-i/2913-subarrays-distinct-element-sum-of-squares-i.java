@@ -1,10 +1,9 @@
 class Solution {
     public int sumCounts(List<Integer> nums) {
-
         int result = 0;
         for (int i = 0; i < nums.size(); i++) {
             boolean val[] = new boolean[101];
-            Arrays.fill(val, false);
+           // Arrays.fill(val, false);
             int count = 1;
             result += Math.pow(count, 2);
             val[nums.get(i)] = true;
