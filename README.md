@@ -217,6 +217,7 @@ DSA/
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
 | [2916-subarrays-distinct-element-sum-of-squares-ii](https://github.com/aryankadu711-prog/DSA/tree/master/2916-subarrays-distinct-element-sum-of-squares-ii) |
+| [3551-minimum-swaps-to-sort-by-digit-sum](https://github.com/aryankadu711-prog/DSA/tree/master/3551-minimum-swaps-to-sort-by-digit-sum) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -234,6 +235,7 @@ DSA/
 | [2897-apply-operations-on-array-to-maximize-sum-of-squares](https://github.com/aryankadu711-prog/DSA/tree/master/2897-apply-operations-on-array-to-maximize-sum-of-squares) |
 | [2913-subarrays-distinct-element-sum-of-squares-i](https://github.com/aryankadu711-prog/DSA/tree/master/2913-subarrays-distinct-element-sum-of-squares-i) |
 | [2916-subarrays-distinct-element-sum-of-squares-ii](https://github.com/aryankadu711-prog/DSA/tree/master/2916-subarrays-distinct-element-sum-of-squares-ii) |
+| [3551-minimum-swaps-to-sort-by-digit-sum](https://github.com/aryankadu711-prog/DSA/tree/master/3551-minimum-swaps-to-sort-by-digit-sum) |
 ## Backtracking
 |  |
 | ------- |
@@ -255,6 +257,7 @@ DSA/
 |  |
 | ------- |
 | [2333-minimum-sum-of-squared-difference](https://github.com/aryankadu711-prog/DSA/tree/master/2333-minimum-sum-of-squared-difference) |
+| [3551-minimum-swaps-to-sort-by-digit-sum](https://github.com/aryankadu711-prog/DSA/tree/master/3551-minimum-swaps-to-sort-by-digit-sum) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
