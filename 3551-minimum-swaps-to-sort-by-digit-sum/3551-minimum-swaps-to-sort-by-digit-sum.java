@@ -1,6 +1,20 @@
+import java.util.*;
+
 class Solution {
 
-    private int getDigitSum(int num) {
+    class Element {
+        int number;
+        int digitSum;
+        int originalIndex;
+
+        Element(int number, int digitSum, int originalIndex) {
+            this.number = number;
+            this.digitSum = digitSum;
+            this.originalIndex = originalIndex;
+        }
+    }
+
+    public int sumDigit(int num) {
         int sum = 0;
 
         while (num > 0) {
@@ -11,51 +25,51 @@ class Solution {
         return sum;
     }
 
-    private int compareByDigitSum(int num1, int num2) {
-        int num1DigitSum = getDigitSum(num1);
-        int num2DigitSum = getDigitSum(num2);
-
-        if (num1DigitSum != num2DigitSum) {
-            return Integer.compare(num1DigitSum, num2DigitSum);
-        }
-
-        return Integer.compare(num1, num2);
-    }
-
     public int minSwaps(int[] nums) {
         int n = nums.length;
-
-        Integer[] afterSorted = new Integer[n];
+        Element[] arr = new Element[n];
         for (int i = 0; i < n; i++) {
-            afterSorted[i] = nums[i];
+            arr[i] = new Element(
+                nums[i],
+                sumDigit(nums[i]),
+                i
+            );
         }
 
-        Arrays.sort(afterSorted, this::compareByDigitSum);
+        
+        Arrays.sort(arr, (a, b) -> {
+            if (a.digitSum != b.digitSum) {
+                return Integer.compare(a.digitSum, b.digitSum);
+            }
 
-        Map<Integer, Integer> valToIdx = new HashMap<>();
+            return Integer.compare(a.number, b.number);
+        });
+
+       
+        int[] pos = new int[n];
+
         for (int i = 0; i < n; i++) {
-            valToIdx.put(nums[i], i);
+            pos[arr[i].originalIndex] = i;
         }
 
-        int swapCount = 0;
-        for (int i = 0; i < n; i++) {
-            int expectedVal = afterSorted[i];
-            int currVal = nums[i];
+        int swaps = 0;
 
-            if (expectedVal == currVal)
+        for (int i = 0; i < n; i++) {
+            if (arr[i].originalIndex == i) {
                 continue;
+            }
 
-            int idx = valToIdx.get(expectedVal);
+            int correctPosition = pos[i];
+            Element temp = arr[i];
+            arr[i] = arr[correctPosition];
+            arr[correctPosition] = temp;
 
-            nums[i] = expectedVal;
-            nums[idx] = currVal;
+            pos[arr[correctPosition].originalIndex] = correctPosition;
+            pos[arr[i].originalIndex] = i;
 
-            valToIdx.put(expectedVal, i);
-            valToIdx.put(currVal, idx);
-
-            swapCount++;
+            swaps++;
         }
 
-        return swapCount;
+        return swaps;
     }
 }
