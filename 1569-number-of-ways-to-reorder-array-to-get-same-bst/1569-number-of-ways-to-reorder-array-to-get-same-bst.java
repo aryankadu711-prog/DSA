@@ -1,48 +1,75 @@
 class Solution {
     private static final long MOD = 1_000_000_007L;
-    private long[][] PT;
-
-    private long solve(List<Integer> nums) {
-        int m = nums.size();
-
-        if (m < 3) {
-            return 1;
-        }
-
-        List<Integer> left = new ArrayList<>();
-        List<Integer> right = new ArrayList<>();
-
-        int root = nums.get(0);
-        for (int i = 1; i < m; i++) {
-            if (nums.get(i) < root) {
-                left.add(nums.get(i));
-            } else {
-                right.add(nums.get(i));
-            }
-        }
-
-        long leftWays = solve(left) % MOD;
-        long rightWays = solve(right) % MOD;
-
-        return (((leftWays * rightWays) % MOD) * PT[m - 1][left.size()]) % MOD;
-    }
+    private long[] fact;
+    private long[] invFact;
 
     public int numOfWays(int[] nums) {
         int n = nums.length;
-        PT = new long[n + 1][];
-        for (int i = 0; i <= n; i++) {
-            PT[i] = new long[i + 1];
-            Arrays.fill(PT[i], 1);
+        fact = new long[n + 1];
+        invFact = new long[n + 1];
 
-            for (int j = 1; j < i; j++) {
-                PT[i][j] = (PT[i - 1][j - 1] + PT[i - 1][j]) % MOD;
+        fact[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            fact[i] = fact[i - 1] * i % MOD;
+        }
+
+        invFact[n] = modPow(fact[n], MOD - 2);
+        for (int i = n; i >= 1; i--) {
+            invFact[i - 1] = invFact[i] * i % MOD;
+        }
+
+        long result = countWays(nums);
+        return (int) ((result - 1 + MOD) % MOD);
+    }
+
+    private long countWays(int[] nums) {
+        int n = nums.length;
+        if (n <= 2) {
+            return 1;
+        }
+
+        int root = nums[0];
+        int leftSize = 0;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] < root) {
+                leftSize++;
             }
         }
-        List<Integer> list = new ArrayList<>();
-        for (int x : nums) {
-            list.add(x);
+
+        int rightSize = n - 1 - leftSize;
+        int[] left = new int[leftSize];
+        int[] right = new int[rightSize];
+
+        int leftIndex = 0;
+        int rightIndex = 0;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] < root) {
+                left[leftIndex++] = nums[i];
+            } else {
+                right[rightIndex++] = nums[i];
+            }
         }
 
-        return (int) ((solve(list) - 1 + MOD) % MOD);
+        long leftWays = countWays(left);
+        long rightWays = countWays(right);
+        long interleavings = combination(n - 1, leftSize);
+
+        return interleavings * leftWays % MOD * rightWays % MOD;
+    }
+
+    private long combination(int n, int k) {
+        return fact[n] * invFact[k] % MOD * invFact[n - k] % MOD;
+    }
+
+    private long modPow(long base, long exponent) {
+        long result = 1;
+        while (exponent > 0) {
+            if ((exponent & 1) == 1) {
+                result = result * base % MOD;
+            }
+            base = base * base % MOD;
+            exponent >>= 1;
+        }
+        return result;
     }
 }
