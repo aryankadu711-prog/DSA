@@ -11,7 +11,7 @@ class Solution {
                 count++;
             }
         }
-        List <Integer> list= new ArrayList<>();
+        List <Integer> list= new ArrayList<>(count);
         for(int i=0;i<count;i++){
             list.add(lessthan+i);
         }
