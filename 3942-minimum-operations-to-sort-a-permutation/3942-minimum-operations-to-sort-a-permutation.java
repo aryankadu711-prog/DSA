@@ -1,33 +1,35 @@
 class Solution {
     public int minOperations(int[] nums) {
-        int n = nums.length;
-
-        int asc_count = 0;
-        int dsc_count = 0;
-
-        for(int i = 1; i < n; i++) {
-            asc_count += (nums[i] == (nums[i-1]+1)%n) ? 1 : 0;
-            dsc_count += (nums[i-1] == (nums[i]+1)%n) ? 1 : 0;
+        int n=nums.length;
+        if(n==1)return 0;
+        //check for inc
+        int dec=-1;
+        for(int i=1;i<n;i++){
+            if(nums[i]!=nums[i-1]+1){
+                if(dec!=-1){
+                    dec=n+1;
+                    break;
+                }
+                dec=i;
+            }
         }
-
-        if(asc_count == n-1 && nums[0] == 0) { //0, 1, 2, .... n-1
-            return 0;
+        if(dec==-1)return 0;
+        if(dec<n)return Math.min(dec,2+(n-dec));
+        //check for dec
+        int inc=-1;
+        for(int i=1;i<n;i++){
+            if(nums[i]!=nums[i-1]-1){
+                if(inc!=-1){
+                    inc=n+1;
+                    break;
+                }
+                inc=i;
+            }
         }
-
-        if(asc_count == n-1) {
-            int leftRot  = n - nums[0];
-            int rightRot = 1 + (nums[n-1] + 1) + 1;
-            return Math.min(leftRot, rightRot);
+        if(inc==-1)return 1;
+        if(inc<n){
+            return Math.min(inc,n-inc)+1;
         }
-
-        if(dsc_count == n-1) {
-            
-            int leftRot = n - nums[n-1] + 1;
-            int rightRot = (nums[0]+1)%n + 1;
-
-            return Math.min(leftRot, rightRot);
-        }
-
         return -1;
     }
 }
