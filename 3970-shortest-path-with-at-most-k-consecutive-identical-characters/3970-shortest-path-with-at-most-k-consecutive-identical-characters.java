@@ -1,60 +1,59 @@
-import java.util.*;
-
 class Solution {
+    public class State{
+        int u;
+        int cst;
+        int d;
+        public State(int u , int cst , int d){
+            this.u = u;
+            this.cst = cst;
+            this.d = d;
+        }
+    }
     public int shortestPath(int n, int[][] edges, String labels, int k) {
-        List<int[]>[] adj = new ArrayList[n];
-        for (int i = 0; i < n; i++) {
-            adj[i] = new ArrayList<>();
+        int INF = Integer.MAX_VALUE;
+        ArrayList<int[]> graph[] = new ArrayList[n];
+        for(int i=0 ; i<n ; i++){
+            graph[i] = new ArrayList<>();
         }
-        for (int[] edge : edges) {
-            adj[edge[0]].add(new int[]{edge[1], edge[2]});
+        for(int[] edge : edges){
+            graph[edge[0]].add(new int[]{edge[1] , edge[2]});
         }
-        
-        // dist[u][c] = minimum weight to reach node u with c consecutive characters of labels[u]
-        int[][] dist = new int[n][k + 1];
-        for (int i = 0; i < n; i++) {
-            Arrays.fill(dist[i], Integer.MAX_VALUE);
+        int dist[][] = new int[n][k+1];
+        for(int i=0 ; i<n ; i++){
+            Arrays.fill(dist[i] , INF);
         }
-        
-        // Priority Queue stores: {distance, node, consecutive_count}
-        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
-        
-        // Start at node 0 with count 1
         dist[0][1] = 0;
-        pq.offer(new int[]{0, 0, 1});
-        
-        char[] lbls = labels.toCharArray();
-        
-        while (!pq.isEmpty()) {
-            int[] curr = pq.poll();
-            int d = curr[0];
-            int u = curr[1];
-            int c = curr[2];
-            
-            if (u == n - 1) {
-                return d;
-            }
-            
-            if (d > dist[u][c]) {
-                continue;
-            }
-            
-            for (int[] edge : adj[u]) {
-                int v = edge[0];
-                int w = edge[1];
+        PriorityQueue<State> pq = new PriorityQueue<>((a,b)-> Integer.compare(a.cst, b.cst));
+        pq.add(new State(0 ,0,1));  // u , cst , max consecutive dist
+
+        while(!pq.isEmpty()){
+            State curr = pq.remove();
+            int u = curr.u;
+            int cst = curr.cst;
+            int d = curr.d;
+
+            if(cst > dist[u][d]) continue;
+            if(u == n-1) return (int)cst;
+
+            for(int neigh[] : graph[u]){
+                int v = neigh[0];
+                int w = neigh[1];
+                int newd = (labels.charAt(u) == labels.charAt(v)) ? d+1 : 1;
+                if(newd >k) continue;
                 
-                int newC = (lbls[u] == lbls[v]) ? c + 1 : 1;
-                if (newC > k) {
-                    continue;
-                }
-                
-                if (d + w < dist[v][newC]) {
-                    dist[v][newC] = d + w;
-                    pq.offer(new int[]{d + w, v, newC});
+                if(cst + w < dist[v][newd]){
+                    dist[v][newd] = cst + w;
+                    pq.add(new State(v, cst + w, newd));
                 }
             }
         }
-        
-        return -1;
+
+        int ans = INF;
+        for(int i=0 ; i<=k ; i++){
+            ans = Math.min(ans , dist[n-1][i]);
+        }
+
+        return ans == INF ? -1 : ans;
+
     }
 }
