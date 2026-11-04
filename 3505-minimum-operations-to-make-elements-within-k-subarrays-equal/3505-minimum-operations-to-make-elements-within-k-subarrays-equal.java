@@ -1,105 +1,79 @@
 class Solution {
-    int n, x, k;
-
-    long[] minOpsSubarray;
-     long[][] memo;
-
-    static final long INF = (long) 1e16; // 10^16
-
-    long solve(int count, int i) {
-        if (count == k)
-            return 0;
-
-        int subArraysNeeded = k - count;
-        int elementsNeeded  = subArraysNeeded * x;
-        int lastIndex       = i + elementsNeeded - 1;
-
-        if (lastIndex >= n) {
-            return INF;
-        }
-
-        if (memo[count][i] != -1) {
-            return memo[count][i];
-        }
-        long result = minOpsSubarray[i] + solve(count + 1, i + x);
-        result = Math.min(result, solve(count, i + 1));
-
-        return memo[count][i] = result;
-    }
-    private void add(TreeMap<Integer, Integer> map, int val) {
-        map.put(val, map.getOrDefault(val, 0) + 1);
-    }
-
-    private void remove(TreeMap<Integer, Integer> map, int val) {
-        int freq = map.get(val);
-        if (freq == 1) map.remove(val);
-        else map.put(val, freq - 1);
-    }
+    int size;
+    long[] cntTree;
+    long[] sumTree;
 
     public long minOperations(int[] nums, int x, int k) {
-        this.n = nums.length;
-        this.x = x;
-        this.k = k;
-
-        minOpsSubarray = new long[n + 1];
-        memo = new long[k + 1][n + 1];
-        for (long[] row : memo) Arrays.fill(row, -1);
-
-        TreeMap<Integer, Integer> left = new TreeMap<>();
-        TreeMap<Integer, Integer> right = new TreeMap<>();
-        int leftSize = 0, rightSize = 0;       
-        long leftSum = 0, rightSum = 0;
-
-        int i = 0;
-        int j = 0;
-
-        while (j < n) {
-            if (leftSize <= rightSize) {
-                add(left, nums[j]);
-                leftSize++;
-                leftSum += nums[j];
-            } else {
-                add(right, nums[j]);
-                rightSize++;
-                rightSum += nums[j];
+        int n = nums.length;
+        int[] sorted = nums.clone();
+        Arrays.sort(sorted);
+        int m = 0;
+        for (int i = 0; i < n; i++) {
+            if (m == 0 || sorted[m - 1] != sorted[i]) {
+                sorted[m++] = sorted[i];
             }
-
-            // Balancing
-            if (leftSize > 0 && rightSize > 0) {
-                int maxLeft  = left.lastKey();
-                int minRight = right.firstKey();
-
-                if (maxLeft > minRight) {
-                    remove(left, maxLeft);
-                    remove(right, minRight);
-
-                    add(left, minRight);
-                    add(right, maxLeft);
-
-                    leftSum  += minRight - maxLeft;
-                    rightSum += maxLeft - minRight;
-                }
-            }
-            if (j - i + 1 == x) {
-                long median = left.lastKey();
-
-                minOpsSubarray[i] = (leftSize * median - leftSum) + (rightSum - rightSize * median);
-
-                if (left.containsKey(nums[i])) {
-                    remove(left, nums[i]);
-                    leftSize--;
-                    leftSum -= nums[i];
-                } else {
-                    remove(right, nums[i]);
-                    rightSize--;
-                    rightSum -= nums[i];
-                }
-                i++;
-            }
-
-            j++;
         }
+        int[] vals = Arrays.copyOf(sorted, m);
+        int[] rank = new int[n];
+        for (int i = 0; i < n; i++) {
+            rank[i] = Arrays.binarySearch(vals, nums[i]) + 1;
+        }
+        size = m;
+        cntTree = new long[m + 1];
+        sumTree = new long[m + 1];
+        int windows = n - x + 1;
+        long[] cost = new long[windows];
+        int half = (x + 1) / 2;
+        long total = 0;
+        for (int i = 0; i < n; i++) {
+            add(rank[i], 1, nums[i]);
+            total += nums[i];
+            if (i >= x) {
+                add(rank[i - x], -1, -nums[i - x]);
+                total -= nums[i - x];
+            }
+            if (i >= x - 1) {
+                int pos = 0;
+                long cntBelow = 0;
+                long sumBelow = 0;
+                int step = Integer.highestOneBit(m);
+                while (step > 0) {
+                    int nxt = pos + step;
+                    if (nxt <= m && cntBelow + cntTree[nxt] < half) {
+                        pos = nxt;
+                        cntBelow += cntTree[nxt];
+                        sumBelow += sumTree[nxt];
+                    }
+                    step >>= 1;
+                }
+                long med = vals[pos];
+                long leftCnt = half;
+                long leftSum = sumBelow + (half - cntBelow) * med;
+                long rightCnt = x - leftCnt;
+                long rightSum = total - leftSum;
+                cost[i - x + 1] = med * leftCnt - leftSum + rightSum - med * rightCnt;
+            }
+        }
+        long inf = Long.MAX_VALUE / 4;
+        long[] prev = new long[n + 1];
+        long[] cur = new long[n + 1];
+        for (int j = 1; j <= k; j++) {
+            Arrays.fill(cur, 0, n + 1, inf);
+            for (int i = j * x; i <= n; i++) {
+                long take = (j == 1 ? 0 : prev[i - x]) + cost[i - x];
+                cur[i] = Math.min(cur[i - 1], take);
+            }
+            long[] tmp = prev;
+            prev = cur;
+            cur = tmp;
+        }
+        return prev[n];
+    }
 
-        return solve(0, 0); 
+    void add(int i, int c, long v) {
+        for (; i <= size; i += i & -i) {
+            cntTree[i] += c;
+            sumTree[i] += v;
+        }
     }
 }
